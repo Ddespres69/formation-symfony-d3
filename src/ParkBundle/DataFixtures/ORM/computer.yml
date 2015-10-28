@@ -1,0 +1,6 @@
+ParkBundle\Entity\Computer:
+    computer{1..14}:
+        name: computer-<numberBetween(1, 200)>
+        ip: <numberBetween(0, 255)>.<numberBetween(0, 255)>.<numberBetween(0, 255)>.<numberBetween(0, 255)>
+        person: @person*
+        enabled: <numberBetween(0, 1)>

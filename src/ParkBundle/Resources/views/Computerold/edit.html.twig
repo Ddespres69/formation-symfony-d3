@@ -1,0 +1,26 @@
+{% extends 'ParkBundle::base.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - Computer edit
+{% endblock %}
+
+{% block body -%}
+
+    <div class="page-header">
+        <h1>Computer edit</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+
+			{% include 'ParkBundle:Computer:form.html.twig' with {'form': edit_form} %}
+
+            <hr>
+
+            <a class="btn btn-sm btn-primary" href="{{ path('computer') }}"><span class="glyphicon glyphicon-arrow-left"></span> Back to list</a>
+            <a class="btn btn-sm btn-danger" href="{{ path('computer_delete', { 'id': computer.id }) }}"><span class="glyphicon glyphicon-remove"></span> Delete</a>
+
+        </div>
+    </div>
+
+{% endblock %}

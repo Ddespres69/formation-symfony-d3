@@ -1,0 +1,46 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <div class="page-header">
+        <h1>Computer {{ entity.name }}</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+
+            <table class="table no-border-top">
+                <tbody>
+                <tr>
+                    <th>Name</th>
+                    <td>{{ entity.name }}</td>
+                </tr>
+                <tr>
+                    <th>Ip</th>
+                    <td>{{ entity.ip }}</td>
+                </tr>
+                <tr>
+                    <th>Person</th>
+                    <td>{{ entity.person }}</td>
+                </tr>
+                <tr>
+                    <th>Enabled</th>
+                    <td>
+                        {% if entity.enabled %}
+                            <span class="glyphicon glyphicon-ok color-green pull-left" aria-hidden="true"></span>
+                        {% else %}
+                            <span class="glyphicon glyphicon-remove color-red" aria-hidden="true"></span>
+                        {% endif %}
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <hr>
+
+            <a class="btn btn-sm btn-primary" href="{{ path('computer') }}"><span class="glyphicon glyphicon-arrow-left"></span> Back to list</a>
+            <a class="btn btn-sm btn-warning" href="{{ path('computer_edit', { 'id': entity.id }) }}"><span class="glyphicon glyphicon-pencil"></span> Edit</a>
+            {{ form_start(delete_form) }}
+            {{ form_widget(delete_form.submit) }}
+            {{ form_end(delete_form) }}
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,7 @@
+person:
+    path:     /
+    defaults: { _controller: "ParkBundle:Person:index" }
+
+person_show:
+    path:     /{id}/show
+    defaults: { _controller: "ParkBundle:Person:show" }

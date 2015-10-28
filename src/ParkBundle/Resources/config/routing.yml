@@ -1,0 +1,7 @@
+park_person:
+    resource: "@ParkBundle/Resources/config/routing/person.yml"
+    prefix:   /person
+
+park_computer:
+    resource: "@ParkBundle/Resources/config/routing/computer.yml"
+    prefix:   /computer

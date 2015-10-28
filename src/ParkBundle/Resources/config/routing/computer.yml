@@ -1,0 +1,30 @@
+computer:
+    path:     /
+    defaults: { _controller: "ParkBundle:Computer:index" }
+
+computer_show:
+    path:     /{id}/show
+    defaults: { _controller: "ParkBundle:Computer:show" }
+
+computer_new:
+    path:     /new
+    defaults: { _controller: "ParkBundle:Computer:new" }
+
+computer_create:
+    path:     /create
+    defaults: { _controller: "ParkBundle:Computer:create" }
+    methods:  POST
+
+computer_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "ParkBundle:Computer:edit" }
+
+computer_update:
+    path:     /{id}/update
+    defaults: { _controller: "ParkBundle:Computer:update" }
+    methods:  [POST, PUT]
+
+computer_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "ParkBundle:Computer:delete" }
+    methods:  [GET, POST, DELETE]

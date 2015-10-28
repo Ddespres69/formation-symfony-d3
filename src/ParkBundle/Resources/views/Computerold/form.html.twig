@@ -1,0 +1,27 @@
+{{ form_start(form, { 'attr': { 'novalidate': 'novalidate'}}) }}
+
+    <div class="form-group">
+        {{ form_label(form.name) }}
+        {{ form_widget(form.name) }}
+        {{ form_errors(form.name) }}
+    </div>
+
+    <div class="form-group">
+        {{ form_label(form.ip) }}
+        {{ form_widget(form.ip) }}
+        {{ form_errors(form.ip) }}
+    </div>
+
+    <div class="form-group">
+        {{ form_label(form.person) }}
+        {{ form_widget(form.person) }}
+        {{ form_errors(form.person) }}
+    </div>
+
+    <div class="checkbox">
+        {{ form_widget(form.enabled) }}
+        {{ form_label(form.enabled) }}
+        {{ form_errors(form.enabled) }}
+    </div>
+
+{{ form_end(form) }}

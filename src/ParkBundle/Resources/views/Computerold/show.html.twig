@@ -1,0 +1,51 @@
+{% extends 'ParkBundle::base.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - Computer show
+{% endblock %}
+
+{% block body -%}
+
+    <div class="page-header">
+        <h1>Computer {{ computer.name }}</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-4">
+
+            <table class="table no-border-top">
+                <tbody>
+                    <tr>
+                        <th>Name</th>
+                        <td>{{ computer.name }}</td>
+                    </tr>
+                    <tr>
+                        <th>Ip</th>
+                        <td>{{ computer.ip }}</td>
+                    </tr>
+                    <tr>
+                        <th>Person</th>
+                        <td>{{ computer.person }}</td>
+                    </tr>
+                    <tr>
+                        <th>Enabled</th>
+                        <td>
+                            {% if computer.enabled %}
+                                <span class="glyphicon glyphicon-ok color-green pull-left" aria-hidden="true"></span>
+                            {% else %}
+                                <span class="glyphicon glyphicon-remove color-red" aria-hidden="true"></span>
+                            {% endif %}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <hr>
+
+            <a class="btn btn-sm btn-primary" href="{{ path('computer') }}"><span class="glyphicon glyphicon-arrow-left"></span> Back to list</a>
+            <a class="btn btn-sm btn-warning" href="{{ path('computer_edit', { 'id': computer.id }) }}"><span class="glyphicon glyphicon-pencil"></span> Edit</a>
+            <a class="btn btn-sm btn-danger" href="{{ path('computer_delete', { 'id': computer.id }) }}"><span class="glyphicon glyphicon-remove"></span> Delete</a>
+
+        </div>
+    </div>
+
+{% endblock %}

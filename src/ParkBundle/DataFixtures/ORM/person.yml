@@ -1,0 +1,4 @@
+ParkBundle\Entity\Person:
+    person{1..6}:
+        name: <lastName()>
+        firstname: <firstName()>

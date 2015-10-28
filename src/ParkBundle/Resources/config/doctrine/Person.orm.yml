@@ -1,0 +1,22 @@
+ParkBundle\Entity\Person:
+    type: entity
+    table: person
+    repositoryClass: ParkBundle\Entity\PersonRepository
+
+    id:
+        id:
+            type: integer
+            generator: { strategy: AUTO }
+
+    fields:
+        name:
+            type: string
+            length: 50
+        firstname:
+            type: string
+            length: 50
+
+    oneToMany:
+        computers:
+            targetEntity: Computer
+            mappedBy: person

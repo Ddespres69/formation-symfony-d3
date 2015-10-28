@@ -1,0 +1,22 @@
+services:
+    sonata.admin.person:
+        class: ParkBundle\Admin\PersonAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Person" }
+        arguments:
+            - ~
+            - ParkBundle\Entity\Person
+            - ~
+        calls:
+            - [ setTranslationDomain, [ParkBundle]]
+
+    sonata.admin.computer:
+        class: ParkBundle\Admin\ComputerAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Computer" }
+        arguments:
+            - ~
+            - ParkBundle\Entity\Computer
+            - ~
+        calls:
+            - [ setTranslationDomain, [ParkBundle]]

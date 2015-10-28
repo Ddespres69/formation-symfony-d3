@@ -1,0 +1,10 @@
+services:
+    park.twig.computer_extension:
+        class: ParkBundle\Twig\ComputerExtension
+        tags:
+            - { name: twig.extension }
+
+    park.form.computer:
+        class: ParkBundle\Form\ComputerType
+        tags:
+            - { name: form.type, alias: form_computer }

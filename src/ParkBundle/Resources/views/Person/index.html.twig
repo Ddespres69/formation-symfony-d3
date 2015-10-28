@@ -1,0 +1,49 @@
+{% extends 'ParkBundle::base.html.twig' %}
+
+{% block title %}
+    {{ parent() }} - Person list
+{% endblock %}
+
+{% block body -%}
+
+    <div class="page-header">
+        <h1>Person list</h1>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <table class="table table-striped">
+
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Name</th>
+                        <th>Firstname</th>
+                        <th>Number of computers</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                {% for person in entities %}
+                    <tr>
+                        <td><a href="{{ path('person_show', { 'id': person.id }) }}">{{ person.id }}</a></td>
+                        <td>{{ person.name }}</td>
+                        <td>{{ person.firstname }}</td>
+                        <td>{{ person.computers|number_computers_and_number_enabled }}</td>
+                        <td>
+                            <a class="btn btn-xs btn-primary" href="{{ path('person_show', { 'id': person.id }) }}"><span class="glyphicon glyphicon-eye-open"></span> Show</a>
+                        </td>
+                    </tr>
+                {% else %}
+                    <tr>
+                        <td colspan="5">No person found</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+
+{% endblock %}
